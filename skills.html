@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Karthikeshwar Ananthapur</title>
+  <meta name="description" content="Technical skills of Karthikeshwar — languages, frameworks, and tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="navbar"></nav>
+
+<main>
+  <div class="page-hero">
+    <p class="section-label">skills</p>
+    <h1>Tech Stack</h1>
+    <p>Things I work with regularly.</p>
+  </div>
+
+  <div class="skills-group">
+    <p class="skills-group-title">// Languages</p>
+    <div class="skills-list" id="skills-languages"></div>
+  </div>
+
+  <div class="skills-group">
+    <p class="skills-group-title">// Libraries & Frameworks</p>
+    <div class="skills-list" id="skills-frameworks"></div>
+  </div>
+
+  <div class="skills-group">
+    <p class="skills-group-title">// Tools & Environments</p>
+    <div class="skills-list" id="skills-tools"></div>
+  </div>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const { languages, frameworks, tools } = portfolioData.skills;
+
+    const render = (id, items) => {
+      document.getElementById(id).innerHTML =
+        items.map(s => `<span class="skill-item">${s}</span>`).join('');
+    };
+
+    render('skills-languages', languages);
+    render('skills-frameworks', frameworks);
+    render('skills-tools', tools);
+  });
+</script>
+
+</body>
+</html>

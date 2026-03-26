@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Karthikeshwar Ananthapur</title>
+  <meta name="description" content="About Karthikeshwar — B.Tech student, AI and web developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="navbar"></nav>
+
+<main>
+  <div class="page-hero">
+    <p class="section-label">about</p>
+    <h1>Who I Am</h1>
+    <p id="about-subtitle"></p>
+  </div>
+
+  <p class="about-bio" id="about-bio"></p>
+  <div class="status-badge" style="margin-top:0.8rem;"><span class="status-dot"></span>Actively seeking internship opportunities</div>
+
+  <div class="info-block" id="edu-block">
+    <h3>Education</h3>
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree" id="edu-degree"></div>
+        <div class="edu-inst" id="edu-inst"></div>
+      </div>
+      <span class="edu-year" id="edu-year"></span>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3>Currently Learning</h3>
+    <ul class="learning-list" id="learning-list"></ul>
+  </div>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const { bio, education, currentlyLearning } = portfolioData.about;
+    const { title } = portfolioData.personal;
+
+    document.getElementById('about-subtitle').textContent = title;
+    document.getElementById('about-bio').textContent = bio;
+    document.getElementById('edu-degree').textContent = education.degree;
+    document.getElementById('edu-inst').textContent = education.institution;
+    document.getElementById('edu-year').textContent = education.year;
+
+    document.getElementById('learning-list').innerHTML =
+      currentlyLearning.map(item => `<li>${item}</li>`).join('');
+  });
+</script>
+
+</body>
+</html>

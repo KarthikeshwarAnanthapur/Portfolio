@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Detail — Karthikeshwar Ananthapur</title>
+  <meta name="description" content="Project details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="navbar"></nav>
+
+<main id="detail-main">
+  <!-- Populated by JS -->
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const project = portfolioData.projects.find(p => p.id === id);
+    const main = document.getElementById('detail-main');
+
+    if (!project) {
+      main.innerHTML = `
+        <div class="not-found">
+          <h2>404</h2>
+          <p>Project not found.</p>
+          <a href="projects.html" class="btn btn-outline" style="margin-top:1.5rem;display:inline-flex;">
+            ← Back to Projects
+          </a>
+        </div>
+      `;
+      return;
+    }
+
+    // Update page title
+    document.title = `${project.title} — Karthikeshwar Ananthapur`;
+
+    main.innerHTML = `
+      <a href="projects.html" class="detail-back">← back to projects</a>
+
+      <p class="section-label">project</p>
+      <h1 class="detail-title">${project.title}</h1>
+      <p class="detail-desc">${project.details}</p>
+
+      <div class="detail-section">
+        <h3>Tech Stack</h3>
+        <div class="tech-stack">
+          ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Features</h3>
+        <ul class="features-list">
+          ${project.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+        <a href="${project.github}" target="_blank" rel="noopener" class="btn btn-primary">
+          ↗ View on GitHub
+        </a>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
