@@ -56,12 +56,26 @@ const portfolioData = {
         "REST API via FastAPI",
         "Confidence score output"
       ]
+    },
+    {
+      id: "portfolio",
+      title: "Personal Portfolio Website",
+      description: "A modern, responsive portfolio website to showcase my projects and skills.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/KarthikeshwarAnanthapur/Portfolio",
+      details: "Built a clean, professional portfolio website from scratch using HTML, CSS, and vanilla JavaScript. Features include a responsive layout, smooth scrolling, and a dedicated projects section.",
+      features: [
+        "Responsive design for desktop and mobile",
+        "Smooth scrolling and navigation",
+        "Dedicated project showcase pages",
+        "Easy to maintain structure"
+      ]
     }
   ],
 
   skills: {
-    languages: ["Python", "JavaScript", "HTML", "CSS", "C"],
-    frameworks: ["FastAPI", "PyTorch", "OpenCV", "NumPy"],
-    tools: ["Git", "GitHub", "VS Code"]
+    languages: ["C", "Python", "Java", "HTML", "CSS", "JavaScript"],
+    frameworks: ["PyTorch", "OpenCV", "NumPy", "FastAPI"],
+    tools: ["VS Code", "GitHub", "Git"]
   }
 };
