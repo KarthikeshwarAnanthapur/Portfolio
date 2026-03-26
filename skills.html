@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills — Karthikeshwar Ananthapur</title>
-  <meta name="description" content="Technical skills of Karthikeshwar — languages, frameworks, and tools." />
+  <meta name="description" content="Technical skills of Karthikeshwar Ananthapur including languages, frameworks, and tools." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -15,25 +16,12 @@
 
 <main>
   <div class="page-hero">
-    <p class="section-label">skills</p>
-    <h1>Tech Stack</h1>
-    <p>Things I work with regularly.</p>
+    <p class="section-label">// skills</p>
+    <h1>Technical Skills</h1>
+    <p>Technologies and tools I work with.</p>
   </div>
 
-  <div class="skills-group">
-    <p class="skills-group-title">// Languages</p>
-    <div class="skills-list" id="skills-languages"></div>
-  </div>
-
-  <div class="skills-group">
-    <p class="skills-group-title">// Libraries & Frameworks</p>
-    <div class="skills-list" id="skills-frameworks"></div>
-  </div>
-
-  <div class="skills-group">
-    <p class="skills-group-title">// Tools & Environments</p>
-    <div class="skills-list" id="skills-tools"></div>
-  </div>
+  <div id="skills-container"></div>
 </main>
 
 <footer id="footer"></footer>
@@ -43,15 +31,20 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const { languages, frameworks, tools } = portfolioData.skills;
+    const groups = [
+      { label: '// languages', items: languages },
+      { label: '// frameworks & libraries', items: frameworks },
+      { label: '// tools', items: tools }
+    ];
 
-    const render = (id, items) => {
-      document.getElementById(id).innerHTML =
-        items.map(s => `<span class="skill-item">${s}</span>`).join('');
-    };
-
-    render('skills-languages', languages);
-    render('skills-frameworks', frameworks);
-    render('skills-tools', tools);
+    document.getElementById('skills-container').innerHTML = groups.map(g => `
+      <div class="skills-group">
+        <p class="skills-group-title">${g.label}</p>
+        <div class="skills-list">
+          ${g.items.map(i => `<span class="skill-item">${i}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
   });
 </script>
 

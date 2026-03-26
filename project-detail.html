@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Detail — Karthikeshwar Ananthapur</title>
-  <meta name="description" content="Project details." />
+  <title>Project — Karthikeshwar Ananthapur</title>
+  <meta name="description" content="Project details — Karthikeshwar Ananthapur portfolio." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -33,42 +34,36 @@
         <div class="not-found">
           <h2>404</h2>
           <p>Project not found.</p>
-          <a href="projects.html" class="btn btn-outline" style="margin-top:1.5rem;display:inline-flex;">
-            ← Back to Projects
-          </a>
-        </div>
-      `;
+          <a href="projects.html" class="btn btn-outline" style="margin-top:1rem">← Back to Projects</a>
+        </div>`;
       return;
     }
 
-    // Update page title
     document.title = `${project.title} — Karthikeshwar Ananthapur`;
 
     main.innerHTML = `
-      <a href="projects.html" class="detail-back">← back to projects</a>
-
-      <p class="section-label">project</p>
+      <a href="projects.html" class="detail-back">← Back to Projects</a>
+      <p class="section-label">// project</p>
       <h1 class="detail-title">${project.title}</h1>
-      <p class="detail-desc">${project.details}</p>
+      <p class="detail-desc">${project.details || project.description}</p>
 
       <div class="detail-section">
-        <h3>Tech Stack</h3>
+        <h3>// tech stack</h3>
         <div class="tech-stack">
           ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
       </div>
 
+      ${project.features ? `
       <div class="detail-section">
-        <h3>Features</h3>
+        <h3>// features</h3>
         <ul class="features-list">
           ${project.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
-      </div>
+      </div>` : ''}
 
-      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <a href="${project.github}" target="_blank" rel="noopener" class="btn btn-primary">
-          ↗ View on GitHub
-        </a>
+      <div class="detail-section">
+        <a href="${project.github}" target="_blank" rel="noopener" class="btn btn-primary">↗ View on GitHub</a>
       </div>
     `;
   });
