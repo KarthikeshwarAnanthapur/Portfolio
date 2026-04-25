@@ -77,7 +77,7 @@ function renderFooter() {
   if (!footer) return;
   const { github, linkedin } = portfolioData.personal;
   footer.innerHTML = `
-    <span class="footer-text">Made with 💖 Karthikeshwar Ananthapur</span>
+    <span class="footer-text">Made with 💖 By Karthikeshwar Ananthapur</span>
     <div class="footer-links">
       <a href="${github}" target="_blank" rel="noopener">GitHub</a>
       <a href="${linkedin}" target="_blank" rel="noopener">LinkedIn</a>
