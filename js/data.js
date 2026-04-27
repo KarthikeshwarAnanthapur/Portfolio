@@ -58,6 +58,24 @@ const portfolioData = {
       ]
     },
     {
+  id: "keyxpulse",
+  title: "KeyXPulse – AI Typing Coach",
+  description: "A modern AI-powered typing platform with real-time analytics, smart feedback, and predictive performance insights.",
+  tech: ["React", "Vite", "Tailwind CSS", "Chart.js", "TensorFlow.js"],
+  github: "https://github.com/KarthikeshwarAnanthapur/KeyXPulse",
+  details: "Built a full-featured AI typing coach using React and Vite with a focus on clean UI and real-time interaction. The application includes customizable time-based typing tests, a backspace-disabled challenge mode, and intelligent feedback based on user performance. Integrated charts for progress tracking and implemented predictive analytics using lightweight machine learning.",
+  features: [
+    "Custom time-based typing tests (10s to 5min)",
+    "Backspace-disabled challenge mode",
+    "Real-time WPM, accuracy, and error tracking",
+    "Weak key detection and AI-driven suggestions",
+    "Interactive performance graphs using Chart.js",
+    "Typing history stored using localStorage",
+    "Predictive typing performance using TensorFlow.js",
+    "Modern aesthetic UI with smooth animations and transitions"
+    ]
+  },
+    {
       id: "portfolio",
       title: "Personal Portfolio Website",
       description: "A modern, responsive portfolio website to showcase my projects and skills.",
