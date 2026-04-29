@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karthikeshwar Ananthapur — Portfolio</title>
+  <meta name="description" content="B.Tech student specializing in AI and web development. Explore my projects and skills." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ✅ FIXED PATHS -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<nav id="navbar"></nav>
+
+<main>
+  <section class="hero">
+    <p class="hero-greeting">// hello, world</p>
+    <h1 class="hero-name" id="hero-name"></h1>
+    <div class="hero-role">
+      <span id="typing-text"></span><span class="cursor"></span>
+    </div>
+    <p class="hero-intro" id="hero-intro"></p>
+
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Actively seeking internship opportunities
+    </div>
+
+    <div class="hero-actions">
+      <a href="/projects" class="btn btn-primary">View Projects →</a>
+      <a href="#" id="hero-github" target="_blank" class="btn btn-outline">↗ GitHub</a>
+      <a href="#" id="hero-linkedin" target="_blank" class="btn btn-outline">↗ LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="preview-section">
+    <div class="preview-header">
+      <h2>// recent projects</h2>
+      <a href="/projects" class="btn btn-outline">View All →</a>
+    </div>
+
+    <div class="projects-grid" id="preview-grid"></div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+
+<!-- ✅ FIXED PATHS -->
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const { name, intro, github, linkedin } = portfolioData.personal;
+
+  document.getElementById('hero-name').textContent = name;
+  document.getElementById('hero-intro').textContent = intro;
+  document.getElementById('hero-github').href = github;
+  document.getElementById('hero-linkedin').href = linkedin;
+
+  // Typing animation
+  const roles = portfolioData.typingRoles;
+  let roleIndex = 0, charIndex = 0, deleting = false;
+  const el = document.getElementById('typing-text');
+
+  function type() {
+    const current = roles[roleIndex];
+
+    if (deleting) {
+      el.textContent = current.slice(0, charIndex--);
+      if (charIndex < 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 400);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, charIndex++);
+      if (charIndex > current.length) {
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+    }
+
+    setTimeout(type, deleting ? 60 : 90);
+  }
+
+  type();
+
+  // 🔥 FIXED: clean URL for details
+  const preview = portfolioData.projects.slice(0, 2);
+
+  document.getElementById('preview-grid').innerHTML = preview.map(p => `
+    <article class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">⌘</div>
+        <h3 class="project-title">${p.title}</h3>
+      </div>
+
+      <p class="project-desc">${p.description}</p>
+
+      <div class="tech-stack">
+        ${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+      </div>
+
+      <div class="card-actions">
+        <a href="${p.github}" target="_blank" class="btn btn-outline">↗ GitHub</a>
+        <a href="/details/${p.id}" class="btn btn-primary">Details →</a>
+      </div>
+    </article>
+  `).join('');
+});
+</script>
+
+</body>
+</html>
