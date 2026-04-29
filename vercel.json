@@ -1,6 +1,9 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/dashboard", "permanent": false }
+    { "source": "/projects.html", "destination": "/projects", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/skills.html", "destination": "/skills", "permanent": true },
+    { "source": "/project-detail.html", "destination": "/details", "permanent": true }
   ],
   "rewrites": [
     { "source": "/dashboard", "destination": "/index.html" },
