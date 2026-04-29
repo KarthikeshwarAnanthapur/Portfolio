@@ -25,7 +25,7 @@
     <p class="hero-intro" id="hero-intro"></p>
     <div class="status-badge"><span class="status-dot"></span>Actively seeking internship opportunities</div>
     <div class="hero-actions">
-      <a href="projects.html" class="btn btn-primary">View Projects →</a>
+      <a href="/projects" class="btn btn-primary">View Projects →</a>
       <a href="#" id="hero-github" target="_blank" rel="noopener" class="btn btn-outline">↗ GitHub</a>
       <a href="#" id="hero-linkedin" target="_blank" rel="noopener" class="btn btn-outline">↗ LinkedIn</a>
     </div>
@@ -35,7 +35,7 @@
   <section class="preview-section">
     <div class="preview-header">
       <h2>// recent projects</h2>
-      <a href="projects.html" class="btn btn-outline">View All →</a>
+      <a href="/projects" class="btn btn-outline">View All →</a>
     </div>
     <div class="projects-grid" id="preview-grid"></div>
   </section>
@@ -43,8 +43,8 @@
 
 <footer id="footer"></footer>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const { name, intro, github, linkedin } = portfolioData.personal;
@@ -95,7 +95,7 @@
         </div>
         <div class="card-actions">
           <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-outline">↗ GitHub</a>
-          <a href="project-detail.html?id=${p.id}" class="btn btn-primary">Details →</a>
+          <a href="/details/?id=${p.id}" class="btn btn-primary">Details →</a>
         </div>
       </article>
     `).join('');
