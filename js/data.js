@@ -17,6 +17,7 @@ const portfolioData = {
     currentlyLearning: [
       "Machine Learning",
       "Vision Transformers (ViT)",
+      "Cybersecurity Fundamentals",
       "Deep Learning with PyTorch"
     ]
   },
@@ -24,6 +25,7 @@ const portfolioData = {
   typingRoles: [
     "AI Developer",
     "Web Developer",
+    "Cybersecurity Learner",
     "ML Enthusiast",
     "Open Source Learner"
   ],
@@ -76,6 +78,24 @@ const portfolioData = {
     ]
   },
     {
+    id: "networksniffer",
+    title: "Basic Network Sniffer",
+    description: "A Python-based network packet sniffer for real-time traffic analysis using Scapy.",
+    tech: ["Python", "Scapy", "Networking", "Cybersecurity"],
+    github: "https://github.com/KarthikeshwarAnanthapur/CodeAlpha_BasicNetworkSniffer",
+    details: "Developed a real-time network packet sniffer using Python and Scapy to capture and analyze live network traffic. The tool extracts source and destination IP addresses, detects TCP/UDP protocols, monitors ports, and performs packet metadata analysis while following safe and ethical cybersecurity practices.",
+    features: [
+      "Real-time packet capturing",
+      "TCP and UDP protocol detection",
+      "Source & destination IP analysis",
+      "Port monitoring and packet inspection",
+      "Packet length tracking",
+      "Privacy-safe IP masking for demonstrations",
+      "Packet logging support",
+      "Built using Scapy for packet analysis"
+    ]
+  },
+    {
       id: "portfolio",
       title: "Personal Portfolio Website",
       description: "A modern, responsive portfolio website to showcase my projects and skills.",
@@ -93,7 +113,7 @@ const portfolioData = {
 
   skills: {
     languages: ["C", "Python", "Java", "HTML", "CSS", "JavaScript"],
-    frameworks: ["PyTorch", "OpenCV", "NumPy", "FastAPI"],
+    frameworks: ["PyTorch", "OpenCV", "NumPy", "FastAPI", "Scapy"],
     tools: ["VS Code", "GitHub", "Git"]
   }
 };
