@@ -96,6 +96,28 @@ const portfolioData = {
     ]
   },
     {
+    id: "safebait",
+    title: "SafeBait – Phishing Awareness Platform",
+    description: "A futuristic cybersecurity awareness platform focused on phishing education, social engineering, and safe online practices.",
+    tech: ["HTML", "CSS", "JavaScript", "Cybersecurity", "UI/UX"],
+    github: "https://github.com/KarthikeshwarAnanthapur/SafeBait",
+    details: "Developed SafeBait, an interactive phishing awareness platform designed to educate users about phishing attacks, social engineering tactics, and cybersecurity best practices. Built with a modern cyberpunk-inspired UI featuring smooth animations, interactive learning sections, phishing awareness content, safety tips, and a fully integrated cybersecurity presentation module.",
+    features: [
+      "Modern cyberpunk-inspired UI design",
+      "Interactive phishing awareness training",
+      "Types of phishing attack explanations",
+      "Social engineering awareness section",
+      "Fake vs real phishing content analysis",
+      "Cybersecurity safety tips and best practices",
+      "Interactive phishing awareness quiz",
+      "Integrated cybersecurity presentation module",
+      "Responsive design for desktop and mobile",
+      "Smooth animations and glowing cyber effects",
+      "Live deployment using Vercel",
+      "Portfolio-ready cybersecurity project"
+    ]
+  },
+    {
       id: "portfolio",
       title: "Personal Portfolio Website",
       description: "A modern, responsive portfolio website to showcase my projects and skills.",
