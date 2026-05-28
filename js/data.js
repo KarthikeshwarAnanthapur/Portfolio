@@ -117,6 +117,28 @@ const portfolioData = {
       "Portfolio-ready cybersecurity project"
     ]
   },
+  {
+  id: "codeshield",
+  title: "CodeShield – Secure Coding Review Platform",
+  description: "A beginner-friendly cybersecurity platform focused on secure coding practices, vulnerability analysis, and manual code review techniques.",
+  tech: ["HTML", "CSS", "JavaScript", "Cybersecurity", "UI/UX"],
+  github: "https://github.com/KarthikeshwarAnanthapur/CodeAlpha_SecureCodingReview",
+  details: "Developed CodeShield, an interactive secure coding review platform designed to educate users about common security vulnerabilities, secure coding standards, and remediation techniques. The project demonstrates manual code inspection methods, vulnerable vs secure code comparisons, cybersecurity best practices, and an interactive security awareness quiz through a clean cyber-themed UI.",
+  features: [
+    "Modern cybersecurity-inspired UI design",
+    "Manual secure coding review workflow",
+    "Common vulnerability analysis and explanations",
+    "Vulnerable vs secure code comparisons",
+    "SQL Injection and XSS awareness modules",
+    "Secure coding best practices section",
+    "Interactive cybersecurity challenge quiz",
+    "Security audit report dashboard",
+    "Responsive multi-page web design",
+    "Neon cyber-themed animations and effects",
+    "Live deployment using Vercel",
+    "Portfolio-ready cybersecurity project"
+  ]
+},
     {
       id: "portfolio",
       title: "Personal Portfolio Website",
